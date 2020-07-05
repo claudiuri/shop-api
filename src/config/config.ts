@@ -1,0 +1,12 @@
+
+module.exports = {
+	username: "postgres",
+	password: "1234567",
+	database: "shop",
+	host: "localhost",
+	post: "5432",
+	dialect: "postgres",
+	define: {
+		"timestamp": false
+	}
+}

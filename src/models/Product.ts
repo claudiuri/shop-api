@@ -1,6 +1,6 @@
 import { Model, Sequelize, DataTypes, Optional } from 'sequelize';
 
-export interface ProductAttributes {
+export interface IProduct {
 	id?: number;
 	title: string;
 	zipcode: string;
@@ -9,8 +9,6 @@ export interface ProductAttributes {
 	date: string;
 	price: number;
 }
-
-interface ProductCreationAttributes extends Optional<ProductAttributes, "id"> {}
 
 export class Product extends Model{
 	public id?: number;
@@ -57,7 +55,6 @@ export class Product extends Model{
 				}
 			},
 			{
-				
 				tableName: 'products',
 				timestamps: false,
 				sequelize
