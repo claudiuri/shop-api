@@ -6,8 +6,10 @@
   "author": "claudiuri <claudio.y07@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts"
+    "build": "npx tsc",
+    "db:migrate": "npx sequelize db:migrate",
+    "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
