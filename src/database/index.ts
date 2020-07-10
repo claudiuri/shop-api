@@ -5,9 +5,9 @@ import { CreditCard } from '../models/CreditCard';
 
 const connection = new Sequelize({
   dialect: 'postgres',
-  host: 'localhost',
-  username: 'postgres',
-  password: '1234567',
+  host: process.env.DB_HOST || 'localhost',
+  username: process.env.DB_USERNAME || 'postgres',
+  password: process.env.DB_PASSWORD || '1234567',
   database: 'shop',
   define: {
     timestamps: false,

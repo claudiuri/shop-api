@@ -8,6 +8,4 @@ RUN yarn
 
 RUN yarn build
 
-RUN yarn db:mmigrate
-
 CMD yarn start

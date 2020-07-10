@@ -1,9 +1,9 @@
 
 module.exports = {
-	username: "postgres",
-	password: "1234567",
+	username: process.env.DB_USERNAME || "postgres",
+	password: process.env.DB_PASSWORD || "1234567",
 	database: "shop",
-	host: "localhost",
+	host: process.env.DB_HOST || "localhost",
 	post: "5432",
 	dialect: "postgres",
 	define: {
