@@ -1,8 +1,10 @@
 FROM node:12-alpine
 
-ADD . src/
+WORKDIR /usr/app
 
-WORKDIR /src
+COPY package*.json ./
+
+COPY . .
 
 RUN yarn
 

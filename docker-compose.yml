@@ -5,6 +5,8 @@ services:
   app:
     build: .
     command: yarn dev
+    volumes: 
+      - .:/usr/app
     ports: 
       - 3000:3000
     environment:
@@ -16,7 +18,12 @@ services:
 
   postgresdb:
     image: postgres
+    volumes: 
+      - postgres:/var/lib/postgresql/data
     ports: 
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: 1234567 
+      POSTGRES_PASSWORD: 1234567
+
+volumes:
+  postgres:
