@@ -18,7 +18,7 @@ export class CreditCard extends Model{
 	public expDate!: string;
 
 	static prepareInit(sequelize: Sequelize) {
-
+ 
 		this.init(
 			{
 				id: {
@@ -47,12 +47,20 @@ export class CreditCard extends Model{
 					type: DataTypes.STRING,
 					allowNull: false,
 				},
+				client_id: {
+					type: DataTypes.STRING,
+					allowNull: false,
+				},
 			},
 			{
-				tableName: 'credit_card',
+				tableName: 'creditCards',
 				timestamps: false,
 				sequelize
 			}
 		);
+	}
+
+	static associate(models: any) {
+		this.belongsTo(models.Client, { foreignKey: 'client_id', as: 'client'})
 	}
 }

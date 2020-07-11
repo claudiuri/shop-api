@@ -2,7 +2,7 @@ import { QueryInterface, DataTypes } from 'sequelize'
 
 export async function up(query: QueryInterface) {
   try {
-    return query.createTable('credit_card', {
+    return query.createTable('creditCards', {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -29,6 +29,16 @@ export async function up(query: QueryInterface) {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      cliente_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'clients',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+        allowNull: false,
+      },
     });
   } catch (e) {
     return Promise.reject(e);
@@ -37,7 +47,7 @@ export async function up(query: QueryInterface) {
 
 export async function down(query: QueryInterface) {
   try {
-    return query.dropTable('credit_card');
+    return query.dropTable('creditCards');
   } catch (e) {
     return Promise.reject(e);
   }

@@ -12,15 +12,6 @@ export async function up(query: QueryInterface) {
       name: {
         type: DataTypes.STRING,
         allowNull: false,
-      },
-      creditCardId: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'credit_card',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL'
       }
     });
   } catch (e) {
