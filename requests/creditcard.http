@@ -1,0 +1,15 @@
+GET http://localhost:3000/creditcards
+
+###
+
+POST http://localhost:3000/creditcards
+content-type: application/json
+
+{
+    "number": "312312312313123123",
+    "holderName": "Claudio Ferreira",
+    "value": 123,
+    "cvv": 123,
+    "expDate": "04/23",
+    "clientId": 1
+}

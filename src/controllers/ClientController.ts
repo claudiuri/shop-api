@@ -4,20 +4,20 @@ import { Client } from '../models/Client';
 
 class ClientController {
 
-	async store(req: Request, res: Response){
+	async store(req: Request, res: Response) {
 
-		const client =	await Client.create(req.body)
+		const client = await Client.create(req.body)
 
 		return res.json(client)
 	}
 
-	async find(req: Request, res: Response){
+	async findAll(req: Request, res: Response) {
 
-		const clients =	await Client.findAll()
+		const clients = await Client.findAll()
 
 		return res.json(clients)
 	}
 
 }
 
-export default  new ClientController;
+export default new ClientController;

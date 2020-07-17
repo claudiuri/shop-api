@@ -11,7 +11,7 @@ class ProductController {
 		return res.json(product)
 	}
 
-	async find(req: Request, res: Response){
+	async findAll(req: Request, res: Response){
 
 		const products =	await Product.findAll()
 

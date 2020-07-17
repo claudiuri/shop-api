@@ -4,20 +4,42 @@ import { CreditCard } from '../models/CreditCard';
 
 class CreditCardController {
 
-	async store(req: Request, res: Response){
+  async store(req: Request, res: Response) {
 
-		const creditCard =	await CreditCard.create(req.body)
+    const { number, holderName, value, cvv, expDate, clientId } = req.body;
 
-		return res.json(creditCard)
-	}
+    const creditCard = await CreditCard.create({ 
+      number, 
+      holderName, 
+      value,
+      cvv, 
+      expDate, 
+      client_id: clientId 
+    });
 
-	async find(req: Request, res: Response){
+    return res.json(creditCard)
+  }
 
-		const creditCards =	await CreditCard.findAll()
+  async findAll(req: Request, res: Response) {
+    
+    const { clientid } = req.query;
 
-		return res.json(creditCards)
-	}
+    const where = clientid ? { where: { cliente_id: clientid } } : {};
+
+    const creditCards = await CreditCard.findAll(where)
+
+    return res.json(creditCards)
+  }
+
+  async findById(req: Request, res: Response) {
+    
+    const { id } = req.params;
+
+    const creditCards = await CreditCard.findByPk(id);
+
+    return res.json(creditCards)
+  }
 
 }
 
-export default  new CreditCardController;
+export default new CreditCardController;

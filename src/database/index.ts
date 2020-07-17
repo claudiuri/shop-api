@@ -15,6 +15,7 @@ const connection = new Sequelize({
   },
 });
 
+
 Product.prepareInit(connection);
 CreditCard.prepareInit(connection);
 Client.prepareInit(connection);

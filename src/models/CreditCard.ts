@@ -4,18 +4,20 @@ export interface ICreditCard {
 	id?: number;
 	number: string;
 	holderName: string;
-	valeu: number;
+	value: number;
 	cvv: number;
 	expDate: string;
+	clientId: number;
 }
 
 export class CreditCard extends Model{
 	public id?: number;
 	public number!: string;
 	public holderName!: string;
-	public valeu?: number;
+	public value?: number;
 	public cvv!: string;
 	public expDate!: string;
+	public clientId!: number;
 
 	static prepareInit(sequelize: Sequelize) {
  
@@ -48,7 +50,7 @@ export class CreditCard extends Model{
 					allowNull: false,
 				},
 				client_id: {
-					type: DataTypes.STRING,
+					type: DataTypes.INTEGER,
 					allowNull: false,
 				},
 			},

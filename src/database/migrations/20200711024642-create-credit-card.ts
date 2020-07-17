@@ -29,7 +29,7 @@ export async function up(query: QueryInterface) {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      cliente_id: {
+      client_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'clients',
