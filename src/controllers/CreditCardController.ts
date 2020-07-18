@@ -35,9 +35,22 @@ class CreditCardController {
     
     const { id } = req.params;
 
-    const creditCards = await CreditCard.findByPk(id);
+    const creditCard = await CreditCard.findByPk(id);
 
-    return res.json(creditCards)
+    return res.json(creditCard)
+  }
+
+  async delete(req: Request, res: Response) {
+    
+    const { id } = req.params;
+
+    const wasDestroyed = await CreditCard.destroy({ where: { id }});
+
+    if (wasDestroyed === 1) {
+      return res.json({ message: 'Deleted' });
+    } else {
+      return res.status(400).json({ message: 'Error while removing' });
+    }
   }
 
 }
