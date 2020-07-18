@@ -64,5 +64,6 @@ export class CreditCard extends Model{
 
 	static associate(models: any) {
 		this.belongsTo(models.Client, { foreignKey: 'client_id', as: 'client'})
+		this.hasMany(models.Transaction,  { foreignKey: 'creditCard_id', as: 'transactions' })
 	}
 }
