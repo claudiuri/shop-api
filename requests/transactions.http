@@ -2,6 +2,10 @@ GET http://localhost:3000/transactions
 
 ###
 
+GET http://localhost:3000/transactions/1
+
+###
+
 POST http://localhost:3000/transactions
 content-type: application/json
 

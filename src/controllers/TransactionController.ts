@@ -15,7 +15,12 @@ class TransactionController {
     
     const { clientid } = req.query;
 
-    const where = clientid ? { where: { cliente_id: clientid } } : {};
+    let where:any = clientid ? { where: { cliente_id: clientid } } : {};
+
+    where['include']  = [ 
+      { association: 'client' }, 
+      { association: 'creditCard' } 
+    ];
 
     const transactions = await Transaction.findAll(where)
 
@@ -26,7 +31,12 @@ class TransactionController {
     
     const { id } = req.params;
 
-    const transaction = await Transaction.findByPk(id);
+    const transaction = await Transaction.findByPk(id, { 
+      include: [ 
+        { association: 'client' }, 
+        { association: 'creditCard' }
+      ]
+    });
 
     return res.json(transaction)
   }
