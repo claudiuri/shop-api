@@ -3,6 +3,7 @@ import express from 'express';
 import ProductController from './controllers/ProductController';
 import CreditCardController from './controllers/CreditCardController';
 import ClientController from './controllers/ClientController';
+import TransactionController from './controllers/TransactionController';
 
 const routes = express.Router();
 
@@ -26,5 +27,10 @@ routes.post('/creditcards', CreditCardController.store);
 routes.get('/creditcards', CreditCardController.findAll);
 routes.get('/creditcards/:id', CreditCardController.findById);
 routes.delete('/creditcards', CreditCardController.delete);
+
+// Transactions
+routes.post('/transactions', TransactionController.store);
+routes.get('/transactions', TransactionController.findAll);
+routes.get('/transactions/:id', TransactionController.findById);
 
 export default routes;

@@ -1,0 +1,12 @@
+GET http://localhost:3000/transactions
+
+###
+
+POST http://localhost:3000/transactions
+content-type: application/json
+
+{
+    "totalToPay": 1233.33,
+    "client_id": 1,
+    "creditCard_id": 1
+}

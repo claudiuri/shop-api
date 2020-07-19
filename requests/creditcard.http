@@ -7,7 +7,7 @@ content-type: application/json
 
 {
     "number": "312312312313123123",
-    "holderName": "Claudio Ferreira",
+    "holderName": "Miguel Prado",
     "value": 123,
     "cvv": 123,
     "expDate": "04/23",
