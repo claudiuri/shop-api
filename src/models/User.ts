@@ -10,7 +10,7 @@ export interface IUser {
 }
 
 export class User extends Model {
-  public id?: number;
+  public id: number = 0;
   public name!: string;
   public email!: string;
   public password!: string;
@@ -55,7 +55,7 @@ export class User extends Model {
    
   }
 
-  static generateAuthToken(userId: number, isAdmin: boolean): String {
+  static generateAuthToken(userId: number, isAdmin: boolean): string {
     return jwt.sign({ userId, isAdmin }, 'shopApiKey');
   }
 }

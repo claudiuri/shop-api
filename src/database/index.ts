@@ -4,6 +4,7 @@ import { Product } from '../models/Product';
 import { CreditCard } from '../models/CreditCard';
 import { Client } from '../models/Client';
 import { Transaction } from '../models/Transaction';
+import { User } from '../models/User';
 
 const connection = new Sequelize({
   dialect: 'postgres',
@@ -20,6 +21,7 @@ Product.prepareInit(connection);
 CreditCard.prepareInit(connection);
 Transaction.prepareInit(connection)
 Client.prepareInit(connection);
+User.prepareInit(connection);
 
 CreditCard.associate(connection.models)
 Client.associate(connection.models)

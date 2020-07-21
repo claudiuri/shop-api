@@ -4,6 +4,7 @@ import ProductController from './controllers/ProductController';
 import CreditCardController from './controllers/CreditCardController';
 import ClientController from './controllers/ClientController';
 import TransactionController from './controllers/TransactionController';
+import UserController from './controllers/UserController';
 
 const routes = express.Router();
 
@@ -32,5 +33,13 @@ routes.delete('/creditcards', CreditCardController.delete);
 routes.post('/transactions', TransactionController.store);
 routes.get('/transactions', TransactionController.findAll);
 routes.get('/transactions/:id', TransactionController.findById);
+
+// Users
+routes.post('/users', UserController.store);
+routes.post('/users/login', UserController.login);
+routes.get('/users', UserController.findAll);
+routes.get('/users/:id', UserController.findById);
+routes.delete('/users/:id', UserController.delete);
+routes.put('/users/:id', UserController.update);
 
 export default routes;
