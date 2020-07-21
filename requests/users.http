@@ -1,5 +1,6 @@
 POST http://localhost:3000/users
 content-type: application/json
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE1OTUzNjgwNDN9.ckdPQoqlOTpCkwHphhiCmFlvu8q6Maxi6eYdXJngP_4
 
 {
     "name": "Marcos Prado",
@@ -11,10 +12,12 @@ content-type: application/json
 ###
 
 GET http://localhost:3000/users
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE1OTUzNjgwNDN9.ckdPQoqlOTpCkwHphhiCmFlvu8q6Maxi6eYdXJngP_4
 
 ###
 
 GET http://localhost:3000/users/1
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE1OTUzNjgwNDN9.ckdPQoqlOTpCkwHphhiCmFlvu8q6Maxi6eYdXJngP_4
 
 ###
 
